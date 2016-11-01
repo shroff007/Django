@@ -1,0 +1,17 @@
+{% load staticfiles %}
+
+<a href="/">
+  <h1><img src="{% static 'images/ybuy-logo.png' %}" alt="YBuy"></h1>
+</a>
+
+<center>
+<h1>Renter</h1>
+<p>Hi Renter! Please Login.</p>
+
+{% if user.is_authenticated %}
+    <a href="/logout/">Logout</a>
+{% else %}
+    <a href="/login/?next={{ request.path }}">Login</a>
+{% endif %}
+<a href="/home/">Home</a>
+</center>

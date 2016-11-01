@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<html lang="en">
+
+  <head>
+    <link href="{% static 'bootstrap.min.css' %}"
+          rel="stylesheet">
+    <link href="{% static 'style.css' %}"
+          rel="stylesheet">
+    <title>YBuy</title>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-static-top text-center">
+      <a href="/">
+        <img src="{% static 'images/ybuy-logo.png' %}" alt="YBuy">
+      </a></nav>
+  <main...></main>
+  </body>
+
+  <nav ...</nav>
+  <main class="container" role="main">
+    <div class="ybuy panel panel-default">
+    {% for users in people %}
+    <div class="panel-heading">
+      <h2 class="panel-title"> {{ users.name }}</h2>
+    </div>
+    <div class="panel-body">
+      {{ users.userType }}
+    </div>
+    {% endfor %}
+  </div>
+</main>
+
+<main ...>
+  <br>
+  <form action="post_url/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+  </form>
+</main>
+</html>

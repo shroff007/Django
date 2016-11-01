@@ -1,0 +1,19 @@
+{% load staticfiles %}
+
+
+<head>...</head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top text-center">
+      <a href="/"><img src="{% static 'images/ybuy-logo.png' %}" alt="YBuy">
+        {% if user.is_authenticated %}
+            <a class="navbar-text navbar-right"
+               href="{% url 'profile' users.username %}">{{ users.username }}</a
+            <a class="navbar-text navbar-right"
+               href="{% url 'logout' %}">logout</a>
+        {% else %}
+            <a class="navbar-text navbar-right"
+               href="{% url 'login' %}">login</a>
+        {% endif %}
+  </body>
+
+    </nav>
